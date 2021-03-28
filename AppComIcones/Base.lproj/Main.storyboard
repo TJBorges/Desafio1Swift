@@ -10,7 +10,7 @@
         <!--Gerador de Senhas-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AppComIcones" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SuperSenha" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -67,6 +67,9 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bfe-vN-rNC">
                                                 <rect key="frame" x="295" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="checkList:" destination="BYZ-38-t0r" eventType="valueChanged" id="Pic-yh-Dny"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>
@@ -81,6 +84,9 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ERB-LE-Weo">
                                                 <rect key="frame" x="295" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="checkList:" destination="BYZ-38-t0r" eventType="valueChanged" id="gQ5-ZZ-5Qx"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>
@@ -95,6 +101,9 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N6w-Gb-GZP">
                                                 <rect key="frame" x="295" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="checkList:" destination="BYZ-38-t0r" eventType="valueChanged" id="M1O-58-8A6"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>
@@ -109,6 +118,9 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bKR-oM-hK8">
                                                 <rect key="frame" x="295" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="checkList:" destination="BYZ-38-t0r" eventType="valueChanged" id="exR-g9-GX2"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>
@@ -150,6 +162,7 @@
                         <barButtonItem key="backBarButtonItem" title="Gerador de Senhas" id="Pkg-BZ-fgc"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="btnGerarSenha" destination="mbA-VR-7nB" id="HEx-3k-Sim"/>
                         <outlet property="swCaptitalLetters" destination="bKR-oM-hK8" id="aQq-Fx-kWk"/>
                         <outlet property="swLetters" destination="Bfe-vN-rNC" id="ED6-vs-lz6"/>
                         <outlet property="swNumbers" destination="ERB-LE-Weo" id="fEY-ga-0E5"/>
@@ -165,7 +178,7 @@
         <!--Lista de Senhas-->
         <scene sceneID="pfB-VE-pok">
             <objects>
-                <viewController id="kPw-aV-wYg" customClass="PasswordsViewController" customModule="AppComIcones" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kPw-aV-wYg" customClass="PasswordsViewController" customModule="SuperSenha" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="86O-QT-Je2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -224,7 +237,7 @@
         <!--Security Tips View Controller-->
         <scene sceneID="eFt-qa-5dl">
             <objects>
-                <viewController id="jJj-V6-B5V" customClass="SecurityTipsViewController" customModule="AppComIcones" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jJj-V6-B5V" customClass="SecurityTipsViewController" customModule="SuperSenha" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sML-xt-6uW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
