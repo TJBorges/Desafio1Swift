@@ -25,16 +25,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.tfNumberOfCharacters.delegate = self
     }
     
-    
     @IBAction func checkList(_ sender: Any) {
         if(!swLetters.isOn && !swNumbers.isOn && !swSpecialCharacters.isOn && !swCaptitalLetters.isOn ){
-            //btnGerarSenha.isHidden = true
             btnGerarSenha.isEnabled = false
-        }
-        else{
-            //btnGerarSenha.isHidden = false
+        } else {
             btnGerarSenha.isEnabled = true
-
         }
     }
     
@@ -47,6 +42,47 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        
+        if(tfNumberOfCharacters.text == "" || tfTotalPasswords.text == "" ){
+            let alert = UIAlertController(title: "Atencao!", message: "Adicione 'Quantidade de senhas' e 'Caracteres' que deseja", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {
+                (action) in
+                print("Ok")
+            }))
+            self.present(alert, animated: true)
+        }
+        
+        if( Int(tfTotalPasswords.text!) ?? 0 <= 0 ){
+            let alert = UIAlertController(title: "Atencao!", message: "Adicinone 'Quantidade de senhas' que deseja", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {
+                (action) in
+                print("Ok")
+            }))
+            self.present(alert, animated: true)
+        }
+        
+        if( Int(tfNumberOfCharacters.text!) ?? 0 < 6 ){
+            let alert = UIAlertController(title: "Atencao!", message: "Numero minimo de caracteres (6)", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {
+                (action) in
+                print("Ok")
+            }))
+            self.present(alert, animated: true)
+        }
+        
+        if( Int(tfNumberOfCharacters.text!) ?? 0 > 16 ){
+             let alert = UIAlertController(title: "Atencao!", message: "Numero maximo de caracteres (16)", preferredStyle: .alert)
+             
+             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {
+                 (action) in
+                 print("Ok")
+             }))
+             self.present(alert, animated: true)
+         }
+        
         let passwordsViewController = segue.destination as! PasswordsViewController
 
         if let numberOfPasswords = Int(tfTotalPasswords.text!) {
